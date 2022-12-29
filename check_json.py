@@ -9,7 +9,7 @@ else:
     file = './files/twitter.json'
 
 
-with open('word_bank.txt') as text_file: 
+with open('./files/word_bank.txt') as text_file: 
     text = text_file.read()
 
 
