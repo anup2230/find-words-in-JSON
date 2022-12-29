@@ -1,22 +1,20 @@
-#!/usr/bin/env python
-
 import json, re
 
 results = []
 
 file_type = input("Depending on file type -> Enter '0' for Twitter OR '1' for Instagram: ")
 
-
-if file_type =="1": file = './instagram.json'
+if file_type =="1": file = './files/instagram.json'
 else:
-    file = './twitter.json'
+    file = './files/twitter.json'
+
 
 with open('word_bank.txt') as text_file: 
     text = text_file.read()
 
 
 word_bank = text.split(" ")
-word_bank = set(word_bank)
+word_bank = set(word_bank)    #O(n)
 
 with open(file, encoding="utf-8") as json_file: 
     jason = json.load(json_file)
@@ -30,7 +28,6 @@ if file_type == "1":
         for word in clean_message.split(' '):
             if word in word_bank:
                 results.append(message)
-                print("found word!")
 else:
     #Twitter
     for i in range(len(jason)):
@@ -39,9 +36,8 @@ else:
         for word in clean_tweet.split(' '):
             if word in word_bank:
                 results.append(tweet)
-                print("found word!")
 
-with open('results.txt', 'w') as txt_file:
+with open('./files/results.txt', 'w+') as txt_file:
     for line in results:
         txt_file.write(line + '\n')
 

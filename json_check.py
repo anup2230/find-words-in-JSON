@@ -1,22 +1,23 @@
-#!/usr/bin/env python
-
-import json, re
+import json, re, subprocess
 
 results = []
 
 file_type = input("Depending on file type -> Enter '0' for Twitter OR '1' for Instagram: ")
 
-
 if file_type =="1": file = './instagram.json'
 else:
+    subprocess.call("./alter_file.sh")
     file = './twitter.json'
+
 
 with open('word_bank.txt') as text_file: 
     text = text_file.read()
 
 
 word_bank = text.split(" ")
-word_bank = set(word_bank)
+word_bank = set(word_bank)    #O(n)
+word_bank
+
 
 with open(file, encoding="utf-8") as json_file: 
     jason = json.load(json_file)
