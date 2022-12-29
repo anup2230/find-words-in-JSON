@@ -2,9 +2,9 @@ To use:
 
 1. Put the specifc words in the 'word_bank.txt' file seperated by spaces.
 
-2. Put instagram or twitter file in the same folder as the program and rename it either 'instagram.json' or 'twitter.js'
+2. Put instagram or twitter file in the "files" folder and rename it either 'instagram.json' or 'twitter.js'
 
-3. If the file from twitter ends with '.js' --> open terminal from the same folder --> Type and Enter "sh alter_file.sh"
+3. If the file from twitter ends with '.js' --> open terminal from the folder the program is in--> Type and Enter "sh alter_file.sh"
 
 4. If the file is already '.json', then open the terminal from the folder --> Type and Enter "python check_json.py" or "python3 check_json.py".
 
